@@ -97,7 +97,8 @@ io.on("connection", (socket) => {
 
 // MongoDB connection
 const PORT = process.env.PORT || 3001;
-const mongoURI = process.env.MONGO_URL;
+const mongoURI =
+  process.env.MONGO_URL || "mongodb://localhost:27017/seniorCitizen";
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
