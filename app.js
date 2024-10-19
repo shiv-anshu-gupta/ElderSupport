@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -96,7 +97,7 @@ io.on("connection", (socket) => {
 
 // MongoDB connection
 const PORT = process.env.PORT || 3001;
-const mongoURI = "mongodb://localhost:27017/seniorCitizen";
+const mongoURI = process.env.MONGO_URL;
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
